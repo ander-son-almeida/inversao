@@ -1,0 +1,79 @@
+# Lista de modelos que podem ser criados no Databricks usando PySpark e paralelismo
+
+# Modelos de Classificação
+classification_models = [
+    "pyspark.ml.classification.LogisticRegression",  # Regressão Logística
+    "pyspark.ml.classification.DecisionTreeClassifier",  # Árvores de Decisão
+    "pyspark.ml.classification.RandomForestClassifier",  # Random Forest
+    "pyspark.ml.classification.GBTClassifier",  # Gradient Boosting (GBT)
+    "pyspark.ml.classification.NaiveBayes",  # Naive Bayes
+    "pyspark.ml.classification.LinearSVC",  # Support Vector Machines (SVM)
+]
+
+# Modelos de Regressão
+regression_models = [
+    "pyspark.ml.regression.LinearRegression",  # Regressão Linear
+    "pyspark.ml.regression.DecisionTreeRegressor",  # Árvores de Decisão para Regressão
+    "pyspark.ml.regression.RandomForestRegressor",  # Random Forest para Regressão
+    "pyspark.ml.regression.GBTRegressor",  # Gradient Boosting para Regressão
+    "pyspark.ml.regression.GeneralizedLinearRegression",  # Regressão Generalizada (GLM)
+]
+
+# Modelos de Clusterização
+clustering_models = [
+    "pyspark.ml.clustering.KMeans",  # k-Means
+    "pyspark.ml.clustering.GaussianMixture",  # Gaussian Mixture Model (GMM)
+    "pyspark.ml.clustering.BisectingKMeans",  # Bisecting k-Means
+    "pyspark.ml.clustering.LDA",  # Latent Dirichlet Allocation (LDA)
+]
+
+# Modelos de Recomendação
+recommendation_models = [
+    "pyspark.ml.recommendation.ALS",  # Alternating Least Squares (ALS)
+]
+
+# Modelos de Detecção de Anomalias (não nativos no PySpark, mas podem ser integrados)
+anomaly_detection_models = [
+    "Isolation Forest (scikit-learn)",  # Usando scikit-learn com pandas_udf
+    "k-Nearest Neighbors (k-NN)",  # Implementação manual ou com scikit-learn
+]
+
+# Métricas que podem ser calculadas no PySpark
+metrics = [
+    "KS (Kolmogorov-Smirnov)",  # Calculado manualmente com PySpark
+    "PSI (Population Stability Index)",  # Implementado manualmente com PySpark
+    "AUC-ROC (pyspark.ml.evaluation.BinaryClassificationEvaluator)",
+    "Precision, Recall, F1-Score (pyspark.ml.evaluation.MulticlassClassificationEvaluator)",
+    "RMSE, MAE (pyspark.ml.evaluation.RegressionEvaluator)",
+]
+
+# Modelos que não são nativos no PySpark, mas podem ser usados no Databricks
+non_native_models = [
+    "XGBoost (xgboost library)",  # Sem paralelismo nativo do PySpark
+    "LightGBM (lightgbm library)",  # Sem paralelismo nativo do PySpark
+    "CatBoost (catboost library)",  # Sem paralelismo nativo do PySpark
+    "Redes Neurais Profundas (TensorFlow/Keras)",  # Usando spark_tensorflow_distributor
+    "Prophet (fbprophet library)",  # Sem paralelismo nativo do PySpark
+]
+
+# Exibindo as listas
+print("Modelos de Classificação:")
+print(classification_models)
+
+print("\nModelos de Regressão:")
+print(regression_models)
+
+print("\nModelos de Clusterização:")
+print(clustering_models)
+
+print("\nModelos de Recomendação:")
+print(recommendation_models)
+
+print("\nModelos de Detecção de Anomalias:")
+print(anomaly_detection_models)
+
+print("\nMétricas que podem ser calculadas no PySpark:")
+print(metrics)
+
+print("\nModelos que não são nativos no PySpark:")
+print(non_native_models)
